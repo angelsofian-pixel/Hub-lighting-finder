@@ -1,0 +1,6 @@
+__pycache__/
+.venv/
+data/*
+!data/.gitkeep
+catalogs/*
+!catalogs/.gitkeep
