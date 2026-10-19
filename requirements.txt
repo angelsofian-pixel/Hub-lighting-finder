@@ -4,5 +4,6 @@ Pillow
 numpy
 pandas
 torch
+torchvision
 transformers
 safetensors
