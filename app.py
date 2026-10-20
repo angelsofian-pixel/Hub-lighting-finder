@@ -8,8 +8,19 @@ import fitz
 import torch
 from transformers import CLIPModel, CLIPProcessor
 
-ROOT=Path(__file__).parent; CATALOGS=ROOT/'catalogs'; DATA=ROOT/'data'; DATA.mkdir(exist_ok=True)
-INDEX=DATA/'index.json'; VECS=DATA/'vectors.npy'; THUMBS=DATA/'thumbs'; THUMBS.mkdir(exist_ok=True)
+ROOT=Path(__file__).parent
+
+CATALOGS=ROOT/'catalogs'
+CATALOGS.mkdir(parents=True, exist_ok=True)
+
+DATA=ROOT/'data'
+DATA.mkdir(parents=True, exist_ok=True)
+
+INDEX=DATA/'index.json'
+VECS=DATA/'vectors.npy'
+
+THUMBS=DATA/'thumbs'
+THUMBS.mkdir(parents=True, exist_ok=True)
 st.set_page_config(page_title='HUB Lighting Finder',page_icon='💡',layout='wide')
 st.markdown('<style>.block-container{max-width:1300px}.score{font-size:1.25rem;font-weight:700;color:#f59e0b}</style>',unsafe_allow_html=True)
 st.title('💡 HUB Lighting Finder')
