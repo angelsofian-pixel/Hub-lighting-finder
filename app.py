@@ -8,14 +8,13 @@ import fitz
 import torch
 from transformers import CLIPModel, CLIPProcessor
 
-ROOT=Path(__file__).parent
+ROOT = Path(__file__).parent
 
-CATALOGS=ROOT/'catalogs'
+CATALOGS = ROOT / "catalogs"
 CATALOGS.mkdir(parents=True, exist_ok=True)
 
-DATA=ROOT/'data'
+DATA = ROOT / "data"
 DATA.mkdir(parents=True, exist_ok=True)
-
 INDEX=DATA/'index.json'
 VECS=DATA/'vectors.npy'
 
