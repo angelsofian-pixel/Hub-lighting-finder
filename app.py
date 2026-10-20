@@ -75,10 +75,19 @@ def load_index():
 
 with st.sidebar:
     st.header('Διαχείριση καταλόγων')
-    uploads=st.file_uploader('Πρόσθεσε PDF καταλόγους',type=['pdf'],accept_multiple_files=True)
+uploads = st.file_uploader(
+    'Πρόσθεσε PDF καταλόγους',
+    type=['pdf'],
+    accept_multiple_files=True)
+
 if uploads and st.button('Αποθήκευση PDF'):
     CATALOGS.mkdir(parents=True, exist_ok=True)
 
+    for f in uploads:
+        file_path = CATALOGS / f.name
+        file_path.write_bytes(f.getbuffer())
+
+    st.success(f'Αποθηκεύτηκαν {len(uploads)} αρχεία.')
     for f in uploads:
         file_path = CATALOGS / f.name
         file_path.write_bytes(f.getbuffer())
