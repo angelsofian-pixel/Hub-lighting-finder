@@ -1,9 +1,3 @@
 streamlit
-PyMuPDF
-Pillow
-numpy
 pandas
-torch
-torchvision
-transformers
-safetensors
+openpyxl
