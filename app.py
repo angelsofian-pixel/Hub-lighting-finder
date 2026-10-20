@@ -87,8 +87,9 @@ if uploads and st.button('Αποθήκευση PDF'):
         file_path = CATALOGS / f.name
         file_path.write_bytes(f.getbuffer())
 
-    st.success(f'Αποθηκεύτηκαν {len(uploads)} αρχεία.')
-     pdfs=list(CATALOGS.glob('*.pdf')); st.metric('Κατάλογοι',len(pdfs))
+st.success(f'Αποθηκεύτηκαν {len(uploads)} αρχεία.')
+
+pdfs=list(CATALOGS.glob('*.pdf')); st.metric('Κατάλογοι',len(pdfs))
 
     if st.button('Δημιουργία ευρετηρίου',type='primary'):
         n,p=rebuild(); st.success(f'Έτοιμο: {n} κατάλογοι, {p} σελίδες.')
